@@ -17,6 +17,18 @@ machineController.list = function (req, res) {
     });
 };
 
+//Affiche 1 machine par son id
+machineController.show = function(req, res) {
+    Machine.findOne({_id:req.params.id}).exec(function(err, machine){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            res.render("../views/machine/show",{machine:machine});
+        } 
+    });
+};
+
+
 //redirection à la page de creation de machine
 machineController.create = function(req, res){
     res.render("../views/machine/create");

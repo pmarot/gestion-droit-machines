@@ -6,7 +6,8 @@ var machine = require("../controllers/MachineController");
 //recuperer les machines
 router.get("/", machine.list);
 
-
+//voir un machine par son id
+router.get("/show/:id", machine.show);
 
 //cree un machine
 router.get("/create", machine.create);
