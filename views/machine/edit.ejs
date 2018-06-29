@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edition de legume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TODO -->
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+</head>
+
+<body>
+    <div class="container">
+        <h3>
+            <a href="/machines">Liste des machines</a>
+        </h3>
+        <h1>Edition d'une machine</h1>
+        <!-- TODO styler le form-->
+
+        <form action="/machines/update/<%= machine._id %>" method="POST">
+            <input type="text" name="nom" value="<%= machine.nom %>" />
+            <input type="number" name="prix" value="<%= machine.id %>" />
+            <input type="submit" value="Mettre à jour" />
+        </form>
+    </div>
+</body>
+
+</html>
