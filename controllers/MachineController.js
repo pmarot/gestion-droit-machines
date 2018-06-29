@@ -37,6 +37,31 @@ machineController.save = function(req, res){
     });
 };
 
+//edition d'un legume par son id
+machineController.edit = function(req, res){
+    var machine = new Machine(req.body);
+
+    Machine.findOne({_id:req.params.id}).exec(function(err, legume){
+        if(err){
+            console.log("Error ", err);
+        } else{
+            res.render("../views/machine/edit",{machine: machine} );
+        } 
+    });
+};
+
+//gestion de l'edition d'une machine
+machineController.update = function(req, res){
+    Machine.findByIdAndUpdate(req.params.id,{ $set :{nom: req.body.nom, id: req.body.id} },{new: true}, function (err, machine){
+
+        if (err){
+            console.log(err);
+            res.render("../views/machine/edit",{machine:req.body} );
+        } 
+        res.redirect("/machines/show/" + machine._id);
+        
+    });
+};
 
 //export du module
 module.exports = machineController;
