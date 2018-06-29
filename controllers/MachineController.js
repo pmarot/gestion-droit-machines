@@ -17,6 +17,26 @@ machineController.list = function (req, res) {
     });
 };
 
+//redirection à la page de creation de machine
+machineController.create = function(req, res){
+    res.render("../views/machine/create");
+}; 
+
+//enregistrement des machines
+machineController.save = function(req, res){
+    var machine = new Machine(req.body);
+
+    machine.save(function(err){
+        if(err){
+            console.log(err);
+            res.render("../views/machine/create");
+        } else{
+            console.log("creation machine OK");
+            res.redirect("/machines/show/" + machine._id);
+        } 
+    });
+};
+
 
 //export du module
 module.exports = machineController;
