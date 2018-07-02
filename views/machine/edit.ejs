@@ -19,8 +19,8 @@
         <!-- TODO styler le form-->
 
         <form action="/machines/update/<%= machine._id %>" method="POST">
-            <input type="text" name="nom" value="<%= machine.nom %>" />
-            <input type="number" name="prix" value="<%= machine.id %>" />
+            <input type="text" name="nom" value="<%= machine.nom %>" placeholder="nom" />
+            <input type="text" name="id" value="<%= machine.id %>"  placeholder="id"/>
             <input type="submit" value="Mettre à jour" />
         </form>
     </div>

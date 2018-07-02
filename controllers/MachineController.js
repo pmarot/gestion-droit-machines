@@ -53,7 +53,7 @@ machineController.save = function(req, res){
 machineController.edit = function(req, res){
     var machine = new Machine(req.body);
 
-    Machine.findOne({_id:req.params.id}).exec(function(err, legume){
+    Machine.findOne({_id:req.params.id}).exec(function(err, machine){
         if(err){
             console.log("Error ", err);
         } else{
@@ -70,7 +70,7 @@ machineController.update = function(req, res){
             console.log(err);
             res.render("../views/machine/edit",{machine:req.body} );
         } 
-        res.redirect("/machines/show/" + machine._id);
+        res.redirect("/machines");
         
     });
 };
