@@ -39,6 +39,10 @@ app.use("/machines", machines);
 var utilisateurs = require("./routes/utilisateurs");
 app.use("/utilisateurs", utilisateurs);
 
+//routes droits
+var droits = require("./routes/droits");
+app.use("/droits", droits);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
