@@ -4,54 +4,56 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Liste des légumes</title>
+    <title>Liste des machines</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- TODO le style-->
     <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
 </head>
-<div class="container">
-    <h1>Liste des machines</h1>
-    <% if(machines.length > 0){%>
-        <table>
-            <thead>
-                <tr>
-                    <th>nom</th>
-                    <th>id</th>
-                    <th>editer</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for (var i=0; i < machines.length; i++){ %>
+
+<body>
+    <div class="container">
+        <h1>Liste des machines</h1>
+        <% if(machines.length > 0){%>
+            <table class="text-center">
+                <thead>
                     <tr>
-                        <td>
-                            <a href="/machines/show/<%= machines[i]._id %>"></a>
-                            <%= machines[i].nom%>
-                        </td>
-                        <td>
-                            <%= machines[i].id %>
-                        </td>
-
-                        <td>
-                            <a href="/machines/edit/<%= machines[i]._id %>">Editer</a>
-                        </td>
-
+                        <th>nom</th>
+                        <th>id</th>
+                        <th>editer</th>
                     </tr>
-                    <% } %>
-            </tbody>
-        </table>
-        <div>
-            <a href="/machines/create">Creer un machine</a>
-        </div>
+                </thead>
+                <tbody>
+                    <% for (var i=0; i < machines.length; i++){ %>
+                        <tr>
+                            <td>
+                                <a href="/machines/show/<%= machines[i]._id %>"></a>
+                                <%= machines[i].nom%>
+                            </td>
+                            <td>
+                                <%= machines[i].id %>
+                            </td>
 
-        <%} else{ %>
-            <div>Il n'y a pas de machine enregistré</div>
+                            <td>
+                                <a href="/machines/edit/<%= machines[i]._id %>">Editer</a>
+                            </td>
+
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
             <div>
                 <a href="/machines/create">Creer un machine</a>
             </div>
-            <% } %>
-</div>
 
-<body>
+            <%} else{ %>
+                <div>Il n'y a pas de machine enregistré</div>
+                <div>
+                    <a href="/machines/create">Creer un machine</a>
+                </div>
+                <% } %>
+    </div>
+
+
 
 </body>
 

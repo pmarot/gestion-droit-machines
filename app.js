@@ -31,7 +31,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-
 //routes machines
 var machines = require("./routes/machines");
 app.use("/machines", machines);
