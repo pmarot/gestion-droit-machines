@@ -49,7 +49,7 @@ machineController.save = function(req, res){
     });
 };
 
-//edition d'un legume par son id
+//edition d'une machine par son id
 machineController.edit = function(req, res){
     var machine = new Machine(req.body);
 
