@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edition d'un utilisateur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TODO -->
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+</head>
+
+<body>
+    <div class="container">
+        <h3>
+            <a href="/utilisateurs">Liste des utilisateurs</a>
+        </h3>
+        <h1>Edition d'un utilisateur</h1>
+        <!-- TODO styler le form-->
+
+        <form action="/utilisateurs/update/<%= utilisateur._id %>" method="POST">
+            <input type="text" name="nom" value="<%= utilisateur.nom %>"  />
+            <input type="text" name="prenom" value="<%= utilisateur.prenom %>"  />
+            <input type="submit" value="Mettre à jour" />
+        </form>
+    </div>
+</body>
+
+</html>

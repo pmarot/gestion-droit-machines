@@ -53,7 +53,7 @@ utilisateurController.save = function(req, res){
 utilisateurController.edit = function(req, res){
     var utilisateur = new Utilisateur(req.body);
 
-    Utilisateur.findOne({_id:req.params.id}).exec(function(err, legume){
+    Utilisateur.findOne({_id:req.params.id}).exec(function(err, utilisateur){
         if(err){
             console.log("Error ", err);
         } else{
@@ -64,7 +64,7 @@ utilisateurController.edit = function(req, res){
 
 //gestion de l'edition d'un utilisateur
 utilisateurController.update = function(req, res){
-    Utilisateur.findByIdAndUpdate(req.params.id,{ $set :{nom: req.body.nom, id: req.body.id} },{new: true}, function (err, machine){
+    Utilisateur.findByIdAndUpdate(req.params.id,{ $set :{nom: req.body.nom, prenom: req.body.prenom} },{new: true}, function (err, utilisateur){
 
         if (err){
             console.log(err);
@@ -74,20 +74,6 @@ utilisateurController.update = function(req, res){
         
     });
 };
-
-
-
-// affiche un seul utilisateur
-// utilisateurController.show = function(req, res) {
-//     Utilisateur.findOne({_id:req.params.id, nom:req.params.nom, prenom:req.params.prenom }).exec(function(err, utilisateur){
-//         if(err){
-//             console.log('Error : ', err);
-//         }else{
-//             res.render("../views/utilisateur/show",{utilisateur:utilisateur});
-//         } 
-//     });
-// };
-
 
 
 
