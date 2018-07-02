@@ -36,6 +36,10 @@ app.use('/users', usersRouter);
 var machines = require("./routes/machines");
 app.use("/machines", machines);
 
+//routes utilisateurs
+var utilisateurs = require("./routes/utilisateurs");
+app.use("/utilisateurs", utilisateurs);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

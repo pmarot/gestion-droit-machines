@@ -1,0 +1,19 @@
+<% if(utilisateurs.length > 0){%>
+
+<% for (i=0; i< utilisateurs.length; i++) { %>
+    <%= utilisateurs[i].nom %>
+    <br>
+    <%= utilisateurs[i].prenom %>
+<% } %>
+
+
+<div><a href="/utilisateurs/create">Ajouter un utilisateur</a></div>
+
+<%} else{ %>
+    <div>Il n'y a pas d'utilisateur enregistré</div>
+    <div><a href="/utilisateurs/create">Ajouter un utilisateur</a></div>
+<% } %>   
+
+
+
+
