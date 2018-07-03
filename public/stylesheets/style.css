@@ -1,17 +1,41 @@
 body{
-  font-size: 19px!important;
+  font-size: 20px!important;
   font-family: 'Dosis', sans-serif!important;
   color: #282828!important;
 }
-
-/*==== logo ====*/
-.navbar-brand .logo{
-  font-size: 28px !important;
-  /*font-family: 'Galada', cursive;*/
-  font-family: 'Ubuntu', sans-serif !important;
+.clearfix {
+  clear: both;
 }
 
+/*========= PAGE D'ACCUEIL ==========*/
+.bg-home {
+  background:linear-gradient(
+  rgba(0, 0, 0, 0.5), 
+  rgba(0, 0, 0, 0.5)
+  ),url(/img/bg-home.jpg);
+  background-size: cover;
+}
+.admin {
+  position: relative; 
+  top: 23vh;
+}
+.icon {
+  font-size: 50px;
+}
+
+.link_home {
+  font-size: 25px;
+}
+/*==== Menu / logo ====*/
+
+.navbar-dark .navbar-nav .nav-link{
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif !important;
+}
 /*==== titre des pages ====*/
+.btn_show {
+  width: 150px;
+}
 .title_page {
   font-family: 'Oxygen', sans-serif;
 }
