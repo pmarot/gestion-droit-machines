@@ -31,7 +31,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-
 //routes machines
 var machines = require("./routes/machines");
 app.use("/machines", machines);
@@ -39,6 +38,10 @@ app.use("/machines", machines);
 //routes utilisateurs
 var utilisateurs = require("./routes/utilisateurs");
 app.use("/utilisateurs", utilisateurs);
+
+//routes droits
+var droits = require("./routes/droits");
+app.use("/droits", droits);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

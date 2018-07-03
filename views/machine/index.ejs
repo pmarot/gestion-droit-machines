@@ -1,5 +1,85 @@
-<% for (i=0; i< machines.length; i++) { %>
+<% include ../partials/head.ejs %>
+
+<body>
+    <% include ../partials/header.ejs %>
+    <main class="container">
+        <div class="row mt-5">
+            <div class="col-md-12 mb-5 text-center">
+                <h1 class="title_page"> <i class="fas fa-robot mr-2 color_icon"></i>Liste des machines</h1>
+            </div>
+            <section class="col-md-12">
+                <% if(machines.length > 0){%>
+                <table class="text-center col-md-12 border">
+                    <thead>
+                        <tr class="text-uppercase bg-info text-white mb-5">
+                            <th class="p-3">nom</th>
+                            <th class="p-3">prenom</th>
+                            <th class="p-3">editer</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-light">
+                        <% for (var i=0; i < machines.length; i++){ %>
+                            <tr>
+                                <td class="p-3">
+                                    <a href="/machines/show/<%= machines[i]._id %>"></a>
+                                    <%= machines[i].nom%>
+                                </td>
+                                <td class="p-3">
+                                    <%= machines[i].id %>
+                                </td>
+
+                                <td class="p-3">
+                                    <a class="link_edit text-uppercase border p-2" href="/machines/edit/<%= machines[i]._id %>">Editer</a>
+                                </td>
+
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </section>    
+            <section class="container pt-5 pb-5 pl-4 text-center">
+                <div class="row">
+                    <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/machines/create">Créer un machine</a>
+                </div>
+
+                <%} else{ %>
+                <div>Il n'y a pas de machine enregistré</div>
+                <div class="row">
+                    <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/machines/create">Créer un machine</a>
+                </div>
+                <% } %>
+            </section>            
+        </div>        
+    </main>
+
+    <% include ../partials/footer.ejs %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <% for (i=0; i< machines.length; i++) { %>
     <%= machines[i].nom %>
     <br>
     <%= machines[i].id %>
-<% } %>
+<% } %> -->
