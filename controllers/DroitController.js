@@ -6,7 +6,10 @@ var droitController = {};
 
 //Liste les droits
 droitController.list = function (req, res) {
-    Droit.find({}).exec(function (err, droits) {
+    Droit.find({})
+    .populate("id_utilisateur")
+    .populate("id_machine")
+    .exec(function (err, droits) {
         if (err) {
             console.log('Error : ', err);
         } else {

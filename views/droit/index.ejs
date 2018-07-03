@@ -17,14 +17,12 @@
                             <% for (i=0; i<droits.length; i++) { %>
                             <tr>
                                 <td>
-                                    <%= droits[i].idMachine %>
+                                    <%= droits[i].id_machine.nom %>
                                 </td>
                                 <td>
-                                        <%= droits[i].idUtilisateur %>
+                                    <%= droits[i].id_utilisateur.nom %>
                                 </td>
-                                <td>
-                                        <%= droits[i].droit %>
-                                </td>
+
    
                             </tr>
                             <% } %>
