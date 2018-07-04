@@ -3,11 +3,26 @@
 var utilisateurs = "";
 <% for (var i=0; i < utilisateurs.length; i++){ %>
 
-    utilisateurs += "<option value='<%= utilisateurs[i]._id%>'><%= utilisateurs[i].nom%></option>";
+    utilisateurs += "<option value='<%= utilisateurs[i].nom%>'><%= utilisateurs[i].nom%></option>";
 <% } %>
 $(function(){
 
 $("#selectutilisateur").html(utilisateurs);  
  
 }); 
+
+
+
+document.getElementById("selectutilisateur").addEventListener("change", function (){
+    <!-- alert(this.value); -->
+
+    var id_utlisateur = "";
+    id_utilisateur = (this.value);
+
+    console.log(id_utilisateur);
+
+}, false);
+
+
+
 
