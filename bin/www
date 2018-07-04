@@ -12,7 +12,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3017');
+var port = normalizePort(process.env.PORT || '6002');
 app.set('port', port);
 
 /**
@@ -78,7 +78,7 @@ function onError(error) {
 }
 
 /**
- * Event listener for HTTP server "listening" event.
+ * liste_utilisateurs
  */
 
 function onListening() {

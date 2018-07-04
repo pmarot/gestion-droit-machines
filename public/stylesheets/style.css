@@ -1,10 +1,53 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
+body{
+  font-size: 20px!important;
+  font-family: 'Dosis', sans-serif!important;
+  color: #282828!important;
+}
+.clearfix {
+  clear: both;
 }
 
-a {
-  color: #00B7FF;
+/*========= PAGE D'ACCUEIL ==========*/
+.bg-home {
+  background:linear-gradient(
+  rgba(0, 0, 0, 0.7), 
+  rgba(0, 0, 0, 0.7)
+  ),url(/img/bg-home.jpg);
+  background-size: cover;
+}
+.admin {
+  position: relative; 
+  top: 23vh;
+}
+.icon {
+  font-size: 50px;
+}
+
+.link_home {
+  font-size: 25px;
+}
+/*==== Menu / logo ====*/
+
+.navbar-dark .navbar-nav .nav-link{
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+/*==== titre des pages ====*/
+.btn_show {
+  width: 150px;
+}
+.title_page {
+  font-family: 'Oxygen', sans-serif;
+}
+
+.color_icon {
+  color: #e40058;
+}
+
+
+/*===== couleur des liens ====*/
+.link_edit {
+  color: #e40058;
+  font-size: 14px;
 }
 

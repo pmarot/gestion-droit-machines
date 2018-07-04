@@ -1,64 +1,59 @@
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Liste des utilisateurs</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- TODO le style-->
-    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
-</head>
+<% include ../partials/head.ejs %>
 
 <body>
-    <div class="container">
-        <h1>Liste des utilisateurs</h1>
-        <% if(utilisateurs.length > 0){%>
-            <table class="text-center">
-                <thead>
-                    <tr>
-                        <th>nom</th>
-                        <th>prenom</th>
-                        <th>editer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% for (var i=0; i < utilisateurs.length; i++){ %>
-                        <tr>
-                            <td>
-                                <a href="/utilisateurs/show/<%= utilisateurs[i]._nom %>"></a>
-                                <%= utilisateurs[i].nom%>
-                            </td>
-                            <td>
-                                <%= utilisateurs[i].prenom %>
-                            </td>
-
-                            <td>
-                                <a href="/utilisateurs/edit/<%= utilisateurs[i]._id %>">Editer</a>
-                            </td>
-
-                        </tr>
-                        <% } %>
-                </tbody>
-            </table>
-            <div>
-                <a href="/utilisateurs/create">Creer un utilisateur</a>
+    <% include ../partials/header.ejs %>
+    <main class="container">
+        <div class="row mt-5">
+            <div class="col-md-12 mb-5 text-center">
+                <h1 class="title_page"> <i class="far fa-address-book mr-2 color_icon"></i>Liste des utilisateurs</h1>
             </div>
+            <section class="col-md-12">
+                <% if(utilisateurs.length > 0){%>
+                    <table class="text-center col-md-12 border">
+                        <thead>
+                            <tr class="text-uppercase bg-info text-white mb-5">
+                                <th class="p-3">nom</th>
+                                <th class="p-3">prenom</th>
+                                <th class="p-3">editer</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-light">
+                            <% for (var i=0; i < utilisateurs.length; i++){ %>
+                                <tr>
+                                    <td class="p-3">
+                                        <a class="btn btn-outline-dark btn_show " href="/utilisateurs/show/<%= utilisateurs[i]._nom %>">
+                                            <%= utilisateurs[i].nom%>
+                                        </a>     
+                                    </td>
+                                    <td class="p-3">
+                                        <%= utilisateurs[i].prenom %>
+                                    </td>
 
-            <%} else{ %>
-                <div>Il n'y a pas d'utilisateur enregistré</div>
-                <div>
-                    <a href="/utilisateurs/create">Creer un utilisateur</a>
+                                    <td class="p-3">
+                                        <a class="link_edit text-uppercase border p-2" href="/utilisateurs/edit/<%= utilisateurs[i]._id %>">Editer</a>
+                                    </td>
+
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+            </section>  
+            <section class="container pt-5 pb-5 pl-4 text-center">
+                <div class="row">
+                   <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/utilisateurs/create">Créer un utilisateur</a>
                 </div>
-                <% } %> 
-    </div>
 
+                <%} else{ %>
+                    <div>Il n'y a pas d'utilisateur enregistré</div>
+                    <div>
+                        <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/utilisateurs/create">Creer un utilisateur</a>
+                    </div>
+                    <% } %> 
+            </section>            
+        </div>        
+    </main>
 
-
-</body>
-
-</html>
-
+    <% include ../partials/footer.ejs %>
 
 
