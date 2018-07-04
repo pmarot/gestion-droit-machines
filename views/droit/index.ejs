@@ -13,20 +13,24 @@
                 <table class="table text-center col-md-12 bg-light">
                     <thead>
                         <tr class="text-uppercase bg-info text-white mb-5">
-                            <th class="p-3" scope="col">ID Machine</th>
+                            <th class="p-3" scope="col" >ID Machine</th>
                             <th class="p-3" scope="col">ID Utilisateur</th>
-                            <th class="p3" scope="col">Droit</th>
-                            <th class="p-3" scope="col">Editer</th>
+                           <!-- <th class="p3" scope="col">Droit</th>
+                            <th class="p-3" scope="col">Editer</th>-->
                         </tr>
                     </thead>
                     <tbody class="border">
                         <% for (i=0; i<droits.length; i++) { %>
                             <tr>
                                 <td class="p-3 border-0">
-                                    <%= droits[i].id_machine.nom %>
+                                    <a class="btn btn-outline-dark btn_show" href="">
+                                        <%= droits[i].id_machine.nom %>
+                                    </a> 
                                 </td>
                                 <td class="p-3 border-0">
+                                    <a class="btn btn-outline-dark btn_show" href="">
                                     <%= droits[i].id_utilisateur.nom %>
+                                    </a>
                                 </td>
                             </tr>
                             <% } %>
@@ -35,13 +39,17 @@
             </section>
             <section class="container pt-5 pb-5 pl-4 text-center">
                 <div class="row">
-                    <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/droits/create">Créer des droits</a>
+                    <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/droits/create">
+                        Créer des droits
+                    </a>
                 </div>
 
                 <%} else{ %>
                     <div>Il n'y a pas de machine enregistré</div>
-                    <div>
-                        <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/droits/create">Créer des droits</a>
+                    <div class="row">
+                        <a class="list-group-item list-group-item-action bg-info text-white text-uppercase" href="/droits/create">
+                            Créer des droits
+                        </a>
                     </div>
                     <% } %>
             </section>        
