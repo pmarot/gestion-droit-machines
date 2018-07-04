@@ -6,6 +6,9 @@ var utilisateur = require("../controllers/UtilisateurController");
 //recuperer les utilisateur
 router.get("/", utilisateur.list);
 
+//recuperer les utilisateurs pour les integrer dans les droits
+router.get("/getutilisateurs", utilisateur.listgetutilisateurs);
+
 //voir un utilisateur par son id
 router.get("/show/:id", utilisateur.show);
 

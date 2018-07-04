@@ -33,7 +33,9 @@
                             <td>
                                 <%= droits[i].id_utilisateur.nom %>
                             </td>
-
+                            <td class="p-3">
+                                <a class="link_edit text-uppercase border p-2" href="/droits/edit/<%= droits[i]._id %>">Editer</a>
+                            </td>
 
                         </tr>
                         <% } %>

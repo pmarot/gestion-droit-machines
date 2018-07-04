@@ -1,0 +1,13 @@
+
+
+var machines = "";
+    <% for (var i=0; i < machines.length; i++){ %>
+
+        machines += "<option value='<%= machines[i]._id%>'><%= machines[i].nom%></option>";
+    <% } %>
+$(function(){
+
+   $("#selectmachine").html(machines);  
+     
+}); 
+

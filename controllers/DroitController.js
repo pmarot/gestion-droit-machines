@@ -19,7 +19,7 @@ droitController.list = function (req, res) {
     });
 };
 
-//Affiche 1 machine par son id
+//Affiche 1 droit par son id
 droitController.show = function(req, res) {
     Droit.findOne({_id:req.params.id}).exec(function(err, droit){
         if(err){
@@ -31,12 +31,12 @@ droitController.show = function(req, res) {
 };
 
 
-//redirection à la page de creation de machine
+//redirection à la page de creation de droit
 droitController.create = function(req, res){
     res.render("../views/droit/create");
 }; 
 
-//enregistrement des machines
+//enregistrement des droits
 droitController.save = function(req, res){
     var droit = new Droit(req.body);
     droit.save(function(err){
@@ -50,7 +50,7 @@ droitController.save = function(req, res){
     });
 };
 
-//edition d'une machine par son id
+//edition d'un droit par son id
 droitController.edit = function(req, res){
     var droit = new Droit(req.body);
 
@@ -63,7 +63,7 @@ droitController.edit = function(req, res){
     });
 };
 
-//gestion de l'edition d'une machine
+//gestion de l'edition d'un droit
 droitController.update = function(req, res){
     Droit.findByIdAndUpdate(req.params.id,{ $set :{id_utilisateur: req.body.nom, id_machine: req.body.id} },{new: true}, function (err, droit){
 

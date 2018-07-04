@@ -17,6 +17,18 @@ utilisateurController.list = function (req, res) {
     });
 };
 
+//Liste les utilisateurs pour l'integrer au droit
+utilisateurController.listgetutilisateurs = function (req, res) {
+    Utilisateur.find({}).exec(function (err, utilisateurs) {
+        if (err) {
+            console.log('Error : ', err);
+        } else {
+            console.log(utilisateurs)
+            res.render("../views/utilisateur/getutilisateurs.ejs", { utilisateurs : utilisateurs });
+        }
+    });
+};
+
 //Affiche 1 utilisateur par son id
 utilisateurController.show = function(req, res) {
     Utilisateur.findOne({_id:req.params.id}).exec(function(err, utilisateur){

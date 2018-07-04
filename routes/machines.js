@@ -6,6 +6,9 @@ var machine = require("../controllers/MachineController");
 //recuperer les machines
 router.get("/", machine.list);
 
+//recuperer les machines pour les integrer dans les droits
+router.get("/getmachines", machine.listgetmachines);
+
 //voir un machine par son id
 router.get("/show/:id", machine.show);
 
