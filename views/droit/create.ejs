@@ -13,11 +13,10 @@
 
         <form action="/droits/save" method="POST">
 
-            <select id="selectmachine"></select>
-            <select id="selectutilisateur"></select>
-            
+            <select id="selectutilisateur" name="id_utilisateur"></select>
+            <select id="selectmachine" name="id_machine"></select>
+            <input type="submit" value="enregistrer" id="envoyer">
         </form>
-
 
     </div>
     <script src="/machines/getmachines"> </script>

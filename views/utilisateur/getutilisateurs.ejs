@@ -3,7 +3,7 @@
 var utilisateurs = "";
 <% for (var i=0; i < utilisateurs.length; i++){ %>
 
-    utilisateurs += "<option value='<%= utilisateurs[i].nom%>'><%= utilisateurs[i].nom%></option>";
+    utilisateurs += "<option value='<%= utilisateurs[i]._id%>'><%= utilisateurs[i].nom%></option>";
 <% } %>
 $(function(){
 
@@ -12,7 +12,7 @@ $("#selectutilisateur").html(utilisateurs);
 }); 
 
 
-
+     <!-- permet d'afficher dans la console la valeur  -->
 document.getElementById("selectutilisateur").addEventListener("change", function (){
     <!-- alert(this.value); -->
 
