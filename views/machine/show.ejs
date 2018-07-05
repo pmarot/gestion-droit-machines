@@ -10,17 +10,16 @@
         </div>
         <div class="row mt-5 mb-5">
             <div class="col-md-4">
-                    <%= machine.nom %> 
-                </div>
-                <div class="col-md-4">
-                    <%= machine.id %>
-                </div>
-                <div class="col-md-4">
-                    <a class="link_edit text-uppercase border p-2" href="/machines/edit/<%= machine._id %>">
-                        Editer
-                    </a>
-                </div>
-            </div> 
-        </div>
+                <%= machine.nom %> 
+            </div>
+            <div class="col-md-4">
+                <%= machine.id %>
+            </div>
+            <div class="col-md-4">
+                <a class="link_edit text-uppercase border p-2" href="/machines/edit/<%= machine._id %>">
+                    Editer
+                </a>
+            </div>
+        </div> 
     </main>
     <% include ../partials/footer.ejs %>
