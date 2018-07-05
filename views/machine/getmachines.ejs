@@ -3,13 +3,14 @@
 var machines = "";
     <% for (var i=0; i < machines.length; i++){ %>
 
-        machines += "<option value='<%= machines[i].nom%>'><%= machines[i].nom%></option>";
+        machines += "<option value='<%= machines[i]._id%>'><%= machines[i].nom%></option>";
     <% } %>
 
 
+    <!-- permet d'afficher dans la console la valeur  -->
     document.getElementById("selectmachine").addEventListener("change", function (){
         <!-- alert(this.value); -->
-    
+        
         var id_machine = "";
         id_machine = (this.value);
 
