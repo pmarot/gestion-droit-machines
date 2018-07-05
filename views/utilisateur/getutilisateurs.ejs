@@ -1,0 +1,13 @@
+
+
+var utilisateurs = "";
+<% for (var i=0; i < utilisateurs.length; i++){ %>
+
+    utilisateurs += "<option value='<%= utilisateurs[i]._id%>'><%= utilisateurs[i].nom%></option>";
+<% } %>
+$(function(){
+
+$("#selectutilisateur").html(utilisateurs);  
+ 
+}); 
+

@@ -17,6 +17,18 @@ machineController.list = function (req, res) {
     });
 };
 
+//Liste les machines pour l'integrer au droit
+machineController.listgetmachines = function (req, res) {
+    Machine.find({}).exec(function (err, machines) {
+        if (err) {
+            console.log('Error : ', err);
+        } else {
+            console.log(machines)
+            res.render("../views/machine/getmachines.ejs", { machines: machines });
+        }
+    });
+};
+
 //Affiche 1 machine par son id
 machineController.show = function(req, res) {
     Machine.findOne({_id:req.params.id}).exec(function(err, machine){
