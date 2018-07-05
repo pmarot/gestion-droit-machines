@@ -1,8 +1,9 @@
-
 <% include ../partials/head.ejs %>
+
 
 <body>
     <% include ../partials/header.ejs %>
+    
     <main class="container">
         <div class="row mt-5 mb-5">
             <section class="col-md-12 text-center">
@@ -22,19 +23,15 @@
         <div class="row">    
             <section class="col-md-8 mx-auto mt-5 mb-5">
                 <form action="/droits/save" method="POST" class="p-5 bg-light border">
-                    <div class="form-group">
-                        <label>Utilisateur:</label>
-                        <input class="form-control" type="text" name="id_utilisateur" placeholder="id utilisateur" />
-                    </div>
-                    <div class="form-group">
-                        <label>ID machine:</label>
-                        <input class="form-control" type="text" name="id_machine" placeholder="id machine" />
-                    </div>
+                    <p><select id="selectmachine" class="col-md-12"></select></p>
+                    <p><select id="selectutilisateur" class="col-md-12"></select></p>
                     <div class="form-group text-center mt-3">
                         <input class="list-group-item list-group-item-action bg-info text-white text-uppercase btn" type="submit" value="enregistrer" />
                     </div> 
                 </form>
             </section>
-        </div>        
+        </div>    
     </main>
+    <script src="/machines/getmachines"></script>
+    <script src="/utilisateurs/getutilisateurs"></script>
     <% include ../partials/footer.ejs %>
