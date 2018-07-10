@@ -1,17 +1,29 @@
-<% include ../partials/head.ejs %>
 
-<body>
-    <% include ../partials/header.ejs %>
-
-        <h2 class="page-header">Connexion</h2>
-        <form method="post" action="/users/login">
-            <div class="form-group">
-                <label>Identifiant</label>
-                <input type="text" class="form-control" name="username" placeholder="Identifiant">
-            </div>
-            <div class="form-group">
-                <label>Mot de passe</label>
-                <input type="password" class="form-control" name="password" placeholder="Mot de passe">
-            </div>
-            <button type="submit" class="btn btn-info">Se connecter</button>
-        </form>
+ <% include ./partials/head.ejs %>
+<body class="bg-home">
+    <% include ./partials/header.ejs %>
+    <main class="container">
+        <div class="row mb-5 mt-5">
+            <section class="col-md-12 text-center">
+                <h1 class="title_page text-white"><i class="far fa-address-book mr-2 color_icon"></i>Se connecter</h1>
+            </section>
+        </div>
+        <div class="row">    
+            <section class="col-md-8 mx-auto mt-5 mb-5">
+                <form method="post" action="/" class="p-5 bg-light border">
+                    <div class="form-group">
+                        <label>Identifiant</label>
+                        <input type="text" class="form-control" name="username" placeholder="Identifiant">
+                    </div>
+                    <div class="form-group">
+                        <label>Mot de passe</label>
+                        <input type="password" class="form-control" name="password" placeholder="Mot de passe">
+                    </div>
+                    <div class="form-group text-center">
+                        <input  class="list-group-item list-group-item-action bg-info text-white text-uppercase btn" type="submit" value="Se connecter" />
+                    </div>
+                </form>
+            </section>  
+        </div>      
+    </main>
+   

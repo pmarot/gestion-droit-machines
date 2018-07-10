@@ -1,0 +1,44 @@
+    
+<% include ./partials/head.ejs %>
+
+<body class="bg-home">
+    <% include ./partials/header.ejs %>
+    <main class="container">
+        <div class="row mt-5">
+            <section class="col-md-12 text-center">
+                <h1 class="title_page text-white"><i class="far fa-address-book mr-2 color_icon"></i>S'enregistrer</h1>
+            </section>
+        </div>
+        <div class="row text-white">
+            <!-- TODO ICI LES MESSAGES d'erreur-->
+        </div>
+        <div class="row">    
+            <section class="col-md-8 mx-auto mt-5 mb-5">
+                <form method="post" action="/user/register" class="p-5 bg-light border">
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" class="form-control" placeholder="Nom" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label>Pseudo</label>
+                        <input type="text" class="form-control" placeholder="Pseudo" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Mot de passe</label>
+                        <input type="password" class="form-control" placeholder="Mot de passe" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label>Confirmer mot de passe</label>
+                        <input type="password" class="form-control" placeholder="Confirmez mot de passe" name="password2">
+                    </div>
+                    <div class="form-group text-center">
+                        <input  class="list-group-item list-group-item-action bg-info text-white text-uppercase btn" type="submit" value="S'inscrire" />
+                    </div>
+                </form>
+            </section>    
+        </div>
+    </main>      
